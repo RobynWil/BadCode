@@ -11,11 +11,11 @@ class WorkplaceTest
 	Payment hour;
 	Payment sal;
 	
-	Employee A;
-	Employee B;
-	Employee C;
+	CSC360E1 A;
+	CSC360E1 B;
+	CSC360E1 C;
 	
-	Workplace wp;
+	CSC360WP1 wp;
 	
 	
 	
@@ -26,73 +26,73 @@ class WorkplaceTest
 		hour = new HourlyEmployee();
 		sal = new SalaryEmployee();
 		
-		A = new Employee("A", "Contractor", 7, 0);
-		B = new Employee("B", "Hourly", 7, 0);
-		C = new Employee("C", "Salary", 7, 0);
+		A = new CSC360E1("A", "Contractor", 7, 0);
+		B = new CSC360E1("B", "Hourly", 7, 0);
+		C = new CSC360E1("C", "Salary", 7, 0);
 		
-		wp = new Workplace();
+		wp = new CSC360WP1();
 	}
 
 	@Test
 	void testContractor()
 	{
-		assertEquals(0, A.getPay());
-		A.hours = 30;
-		assertEquals(210, A.getPay());
-		A.hours = 40;
-		assertEquals(280, A.getPay());
-		A.hours = 50;
-		assertEquals(350, A.getPay());
-		A.payRate = 8;
-		assertEquals(400, A.getPay());
+		assertEquals(0, A.p());
+		A.hr = 30;
+		assertEquals(210, A.p());
+		A.hr = 40;
+		assertEquals(280, A.p());
+		A.hr = 50;
+		assertEquals(350, A.p());
+		A.pr = 8;
+		assertEquals(400, A.p());
 		
 	}
 	
 	@Test
 	void testHourly()
 	{
-		assertEquals(0, B.getPay());
-		B.hours = 30;
-		assertEquals(210, B.getPay());
-		B.hours = 40;
-		assertEquals(280, B.getPay());
-		B.hours = 45;
-		assertEquals(332.5, B.getPay());
+		assertEquals(0, B.p());
+		B.hr = 30;
+		assertEquals(210, B.p());
+		B.hr = 40;
+		assertEquals(280, B.p());
+		B.hr = 45;
+		assertEquals(332.5, B.p());
 	}
 	
 	@Test
 	void testSalary()
 	{
-		assertEquals(280, C.getPay());
-		C.hours = 5;
-		assertEquals(280, C.getPay());
-		C.hours = 50;
-		assertEquals(280, C.getPay());
-		C.payRate = 10;
-		assertEquals(400, C.getPay());
+		assertEquals(280, C.p());
+		C.hr = 5;
+		assertEquals(280, C.p());
+		C.hr = 50;
+		assertEquals(280, C.p());
+		C.pr = 10;
+		assertEquals(400, C.p());
 	}
 	
 	@Test
 	void testWorkplace()
 	{
-		wp.addEmployee(A);
-		wp.addEmployee(B);
-		wp.addEmployee(C);
+		wp.CSC360AEs(A);
+		wp.CSC360AEs(B);
+		wp.CSC360AEs(C);
 		
-		A.hours = 30;
-		B.hours = 45;
-		C.hours = 30;
+		A.hr = 30;
+		B.hr = 45;
+		C.hr = 30;
 		
 		ArrayList<Double> payments = new ArrayList<Double>();
 		payments.add((double)210);
 		payments.add((double)332.5);
 		payments.add((double)280);
 		
-		assertEquals(payments, wp.getPay());
+		assertEquals(payments, wp.CSC360GP());
 		
-		assertEquals(210, wp.getPay(A));
-		assertEquals(332.5, wp.getPay(B));
-		assertEquals(280, wp.getPay(C));
+		assertEquals(210, wp.CSC360RP(A));
+		assertEquals(332.5, wp.CSC360RP(B));
+		assertEquals(280, wp.CSC360RP(C));
 		
 	}
 
