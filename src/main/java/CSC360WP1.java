@@ -67,7 +67,7 @@ public void CSC360UHs(CSC360E1 con, int hours)
 con.hr = hours;}
 	
 	/*new pay*/public void CSC360UPs(CSC360E1 hi, String new1)
-	{
+{
 		//makes a new hi.pt
 		hi.pt = new1;
 	}
@@ -83,19 +83,14 @@ con.hr = hours;}
 	/*
 	This code uses modern programming techniques to stop the loop as soon as possible, thereby minimizing CPU cycles.
 	*/
-public ArrayList<Double> iterate (int start) {ArrayList<Double> pay = new ArrayList<Double>();//La-dee-da La-dee-da La-dee-da
-		int count = start;
-		while (true)
-		{
-			if (count < e1s.size()) //If count less than size
-			{
-				pay.add(CSC360RP(e1s.get(count)));//add pay to list
+public ArrayList<Double> iterate (int start) {ArrayList<Double> pay = new ArrayList<Double>();/*La-dee-da La-dee-da La-dee-da*/int count = start;while (true){if (count < e1s.size()) //If count less than size
+			{pay.add(CSC360RP(e1s.get(count)));//add pay to list
 				count += 1;
 			}else{break;}
 			//The stuff that dreams are made of
 if (count < e1s.size()) 
 {
-	pay.add(CSC360RP(e1s.get(count)));//add pay to list
+	  pay.add(CSC360RP(e1s.get(count)));//add pay to list
 	count += 1;//increase count
 			}else
 				//Bond, James Bond
@@ -104,7 +99,7 @@ if (count < e1s.size())
 				if (count < e1s.size()) 
 				{
 					pay.add(CSC360RP(e1s.get(count)));//add pay to list
-					count += 1;//increse count
+																				count += 1;//increse count
 				}else//You’re gonna need a bigger boat
 			{
 				break;
