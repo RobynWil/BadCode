@@ -2,11 +2,11 @@
 public class Employee
 {
 	String name;
-	Payment payType;
+	String payType;
 	double payRate;
 	double hours;
 	
-	public Employee(String name, Payment payType, double payRate, double hours)
+	public Employee(String name, String payType, double payRate, double hours)
 	{
 		super();
 		this.name = name;
@@ -17,7 +17,32 @@ public class Employee
 	
 	public double getPay() 
 	{
-		return payType.getPayment(hours, payRate);
+		if (payType == "Contractor")
+		{
+			return hours * payRate;
+		}
+		else if (payType == "Hourly")
+		{
+			if (hours <= 40)
+			{
+				return hours * payRate;
+			}
+			else 
+			{
+				double pay = 40 * payRate;
+				double overTime = (hours - 40) * payRate * 1.5;
+				return pay + overTime;
+				
+			}
+		}
+		else if (payType == "Salary")
+		{
+			return 40 * payRate;
+		}
+		else
+		{
+			return 0;
+		}
 	}
 	
 	
