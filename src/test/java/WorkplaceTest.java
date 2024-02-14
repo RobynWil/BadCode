@@ -7,9 +7,6 @@ import org.junit.jupiter.api.Test;
 
 class WorkplaceTest
 {
-	Payment con;
-	Payment hour;
-	Payment sal;
 	
 	CSC360E1 A;
 	CSC360E1 B;
@@ -22,9 +19,6 @@ class WorkplaceTest
 	@BeforeEach
 	void setUp() throws Exception
 	{
-		con = new Contractor();
-		hour = new HourlyEmployee();
-		sal = new SalaryEmployee();
 		
 		A = new CSC360E1("A", "Contractor", 7, 0);
 		B = new CSC360E1("B", "Hourly", 7, 0);
