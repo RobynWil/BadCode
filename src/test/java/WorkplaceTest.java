@@ -26,9 +26,9 @@ class WorkplaceTest
 		hour = new HourlyEmployee();
 		sal = new SalaryEmployee();
 		
-		A = new Employee("A", con, 7, 0);
-		B = new Employee("B", hour, 7, 0);
-		C = new Employee("C", sal, 7, 0);
+		A = new Employee("A", "Contractor", 7, 0);
+		B = new Employee("B", "Hourly", 7, 0);
+		C = new Employee("C", "Salary", 7, 0);
 		
 		wp = new Workplace();
 	}

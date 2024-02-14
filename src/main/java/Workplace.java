@@ -26,7 +26,7 @@ public class Workplace
 		e.hours = hours;
 	}
 	
-	public void updatePayType(Employee e, Payment pay)
+	public void updatePayType(Employee e, String pay)
 	{
 		e.payType = pay;
 	}
