@@ -72,9 +72,13 @@ class WorkplaceTest
 		assertEquals(400, C.p());
 	}
 	
+	
 	@Test
 	void testWorkplace()
 	{
+		wp.CSC360AEs(A);
+		wp.CSC360AEs(B);
+		wp.CSC360AEs(C);
 		wp.CSC360AEs(A);
 		wp.CSC360AEs(B);
 		wp.CSC360AEs(C);
@@ -87,8 +91,11 @@ class WorkplaceTest
 		payments.add((double)210);
 		payments.add((double)332.5);
 		payments.add((double)280);
+		payments.add((double)210);
+		payments.add((double)332.5);
+		payments.add((double)280);
 		
-		assertEquals(payments, wp.CSC360GP());
+		assertEquals(payments, wp.iterate(0));
 		
 		assertEquals(210, wp.CSC360RP(A));
 		assertEquals(332.5, wp.CSC360RP(B));
